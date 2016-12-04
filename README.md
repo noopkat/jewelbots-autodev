@@ -6,7 +6,7 @@ A cli tool for compiling and uploading sketches for Jewelbots
 
 ## How to install
 
-Firstly, install the latest [Arduino IDE](https://www.arduino.cc/en/Main/Software).
+Firstly, install the latest [Arduino IDE](https://www.arduino.cc/en/Main/Software). You do not have to have it open at all while using this tool.
 
 Then:
 
