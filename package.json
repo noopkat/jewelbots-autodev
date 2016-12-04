@@ -1,8 +1,9 @@
 {
   "name": "jewelbots-autodev",
   "version": "0.0.0",
-  "description": "Write code for Jewelbots outside of the Arduino IDE",
+  "description": "Compile and upload code for Jewelbots outside of the Arduino IDE",
   "main": "index.js",
+  "bin": "./bin/cli.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
