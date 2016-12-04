@@ -9,6 +9,7 @@
   "author": "Suz Hinton",
   "license": "MIT",
   "dependencies": {
+    "minimist": "^1.2.0",
     "mkdirp": "^0.5.1",
     "serialport": "^4.0.6"
   },
