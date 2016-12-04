@@ -1,6 +1,6 @@
 {
   "name": "jewelbots-autodev",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Compile and upload code for Jewelbots outside of the Arduino IDE",
   "main": "index.js",
   "bin": "./bin/cli.js",
