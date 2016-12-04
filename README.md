@@ -6,7 +6,9 @@ A cli tool for compiling and uploading sketches for Jewelbots
 
 ## How to install
 
-
+```bash
+npm install -g jewelbots-autodev
+```
 
 ## How to use
 
