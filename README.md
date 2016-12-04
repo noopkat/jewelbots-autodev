@@ -6,6 +6,10 @@ A cli tool for compiling and uploading sketches for Jewelbots
 
 ## How to install
 
+Firstly, install the latest [Arduino IDE](https://www.arduino.cc/en/Main/Software).
+
+Then:
+
 ```bash
 npm install -g jewelbots-autodev
 ```
