@@ -1,0 +1,13 @@
+.DS_Store
+node_modules
+npm*.log
+notes.md
+upload.txt
+compile.js
+bt.js
+blue.ino
+build.prefs.json
+dist
+sketches
+exploration
+.jbauto
