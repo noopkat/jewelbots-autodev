@@ -53,6 +53,12 @@ You can also override the `sketch-file` property in `.jbauto` by specifying it a
 jewelbots-autodev compile /path/to/my/sketch.ino
 ```
 
+You can also use a relative path from your current folder.
+
+```bash
+jewelbots-autodev compile sketch.ino 
+```
+
 #### To upload:
 
 Plug in your Jewelbot, and hold the action button to put it into coding mode first.
