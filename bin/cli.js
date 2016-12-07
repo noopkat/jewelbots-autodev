@@ -13,7 +13,7 @@ var userAction = argv._[0];
 handleInput(userAction);
 
 function showHelp() {
-  console.log('usage:\njewelbots-autodev compile\njewelbots-autodev upload\njewelbots-autodev help');
+  console.log('usage:\njewelbots-autodev compile [sketch]\njewelbots-autodev upload [sketch]\njewelbots-autodev help');
 };
 
 function setup(callback) {
@@ -25,6 +25,11 @@ function setup(callback) {
       fs.readFile(configPath, function(error, file) {
         if (error) return callback(error);
         config = JSON.parse(file);
+        var source = argv._[1];
+        if (source != undefined) {
+          config['sketch-file'] = source;
+        }
+
         return callback(null, config);
       });
     } else {
