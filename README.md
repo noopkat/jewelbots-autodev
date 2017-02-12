@@ -36,8 +36,7 @@ OSX Example:
 }
 ```
 
-Windows config example coming soon!
-
+Windows and Linux config examples coming soon!
 
 ### 2. Run jewelbots-autodev from your project's directory
 
