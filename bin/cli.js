@@ -81,6 +81,20 @@ function handleInput(action) {
       break;
     }
 
+    case 'friendship-mode': {
+      setup(function(error, config) {
+        if (error) return console.log(error);
+        // override config to point at the reset sketch for uploading
+        config['sketch-file'] = path.join(__dirname, '..', 'lib', 'support', 'empty.ino');
+        config['build-destination'] = path.join(__dirname, '..', 'lib', 'support', 'compiled');
+        uploadSketch(config, function(error) {
+          if (error) return console.log(error);
+          console.log('done.');
+        });
+      });
+      break;
+    }
+
     case 'help': {
       showHelp();
       process.exit();
