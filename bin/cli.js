@@ -5,6 +5,7 @@ var parseArgs = require('minimist');
 var findPort = require('../lib/findPort');
 var compiler = require('../lib/compiler');
 var uploader = require('../lib/uploader');
+var updater = require('../lib/updater');
 
 var args = (process.argv.slice(2));
 var argv = parseArgs(args, {});
@@ -13,7 +14,7 @@ var userAction = argv._[0];
 handleInput(userAction);
 
 function showHelp() {
-  console.log('usage:\njewelbots-autodev compile [sketch]\njewelbots-autodev upload [sketch]\njewelbots-autodev help');
+  console.log('usage:\njewelbots-autodev compile [sketch]\njewelbots-autodev upload [sketch]\njewelbots-autodev friendship-mode\njewelbots-autodev help');
 };
 
 function setup(callback) {
@@ -56,6 +57,18 @@ function uploadSketch(config, callback) {
   });
 }
 
+function updateFirmware(config, callback) {
+  findPort(function(error, port) {
+    if (error) return console.log(error);
+    if (!port) return console.log(new Error('could not find a connected Jewelbot.'));
+    console.log('found jewelbot on port ' + port);
+    config.port = port;
+    updater.update(config, function(error) {
+      return callback(error);
+    });
+  });
+}
+
 function handleInput(action) {
   switch (action) {
     case 'compile': {
@@ -74,6 +87,17 @@ function handleInput(action) {
       setup(function(error, config) {
         if (error) return console.log(error);
         uploadSketch(config, function(error) {
+          if (error) return console.log(error);
+          console.log('done.');
+        });
+      });
+      break;
+    }
+
+    case 'friendship-mode': {
+      setup(function(error, config) {
+        if (error) return console.log(error);
+        updateFirmware(config, function(error) {
           if (error) return console.log(error);
           console.log('done.');
         });

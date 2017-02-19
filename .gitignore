@@ -11,3 +11,9 @@ dist
 sketches
 exploration
 .jbauto
+lib/support/compiled/preproc
+lib/support/compiled/core
+lib/support/compiled/sketch
+lib/support/compiled/libraries
+lib/support/compiled/includes.cache
+lib/support/compiled/build.options.json
