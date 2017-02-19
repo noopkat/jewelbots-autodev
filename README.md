@@ -32,6 +32,7 @@ OSX Example:
 ```json
 {
   "jewelbots-lib": "/Users/noopkat/Library/Arduino15/packages/Jewelbots_Arduino_Library",
+  "library-version": "1.0.2",
   "jewelbots-firmware": "/Users/noopkat/Library/Arduino15/packages/Jewelbots_Firmware_Update/",
   "firmware-version": "1.0.4",
   "arduino-app": "/Applications/Arduino-1.6.13.app",
