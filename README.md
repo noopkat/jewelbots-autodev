@@ -21,15 +21,17 @@ npm install -g jewelbots-autodev
 The config file needs to know four things:
 
 1. The path to the Jewelbots Arduino Library on your machine
-2. The location of the Arduino IDE on your machine
-3. Which directory you want the compiled files to be placed
-4. The path and filename of the sketch you're looking to compile
+2. The version number of the Jewelbots firmware you're on
+3. The location of the Arduino IDE on your machine
+4. Which directory you want the compiled files to be placed
+5. The path and filename of the sketch you're looking to compile
 
 OSX Example:
 
 ```json
 {
   "jewelbots-lib": "/Users/noopkat/Library/Arduino15/packages/Jewelbots_Arduino_Library",
+  "firmware-version": "1.0.2",
   "arduino-app": "/Applications/Arduino-1.6.13.app",
   "build-destination": "/Users/noopkat/code/jewelbots-fun/dist",
   "sketch-file": "/Users/noopkat/code/jewelbots-fun/sketches/blue.ino"
