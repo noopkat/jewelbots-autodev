@@ -14,7 +14,7 @@ var userAction = argv._[0];
 handleInput(userAction);
 
 function showHelp() {
-  console.log('usage:\njewelbots-autodev compile [sketch]\njewelbots-autodev upload [sketch]\njewelbots-autodev help');
+  console.log('usage:\njewelbots-autodev compile [sketch]\njewelbots-autodev upload [sketch]\njewelbots-autodev friendship-mode\njewelbots-autodev help');
 };
 
 function setup(callback) {
