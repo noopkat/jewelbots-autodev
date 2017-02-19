@@ -5,6 +5,7 @@ var parseArgs = require('minimist');
 var findPort = require('../lib/findPort');
 var compiler = require('../lib/compiler');
 var uploader = require('../lib/uploader');
+var updater = require('../lib/updater');
 
 var args = (process.argv.slice(2));
 var argv = parseArgs(args, {});
@@ -56,6 +57,18 @@ function uploadSketch(config, callback) {
   });
 }
 
+function updateFirmware(config, callback) {
+  findPort(function(error, port) {
+    if (error) return console.log(error);
+    if (!port) return console.log(new Error('could not find a connected Jewelbot.'));
+    console.log('found jewelbot on port ' + port);
+    config.port = port;
+    updater.update(config, function(error) {
+      return callback(error);
+    });
+  });
+}
+
 function handleInput(action) {
   switch (action) {
     case 'compile': {
@@ -84,10 +97,7 @@ function handleInput(action) {
     case 'friendship-mode': {
       setup(function(error, config) {
         if (error) return console.log(error);
-        // override config to point at the reset sketch for uploading
-        config['sketch-file'] = path.join(__dirname, '..', 'lib', 'support', 'empty.ino');
-        config['build-destination'] = path.join(__dirname, '..', 'lib', 'support', 'compiled');
-        uploadSketch(config, function(error) {
+        updateFirmware(config, function(error) {
           if (error) return console.log(error);
           console.log('done.');
         });
